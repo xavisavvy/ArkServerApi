@@ -166,6 +166,7 @@ public:
 			if (Equipments.Num() > 0)
 			{
 				EventManager::Get().GiveEventPlayersEquipment(Equipments[EventManager::Get().GetRandomIndexNonRecurr(Equipments.Num())]);
+				if (LogToConsole) Log::GetLog()->info("{} Players getting equipment", (CurrentEvent->GetName().IsEmpty() ? "" : CurrentEvent->GetName().ToString().c_str()));
 			}
 			SetState(EventState::WaitForFight);
 			break;
